@@ -12,3 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 3000);
     }
 });
+
+window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        var intro = document.getElementById('intro');
+        if (intro) {
+            intro.classList.add('hide');
+        }
+    }, 1500);
+});

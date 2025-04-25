@@ -1,280 +1,289 @@
-/* estilo geral */
-*{
-         margin: 0;
-         padding: 0;
-         box-sizing: border-box;
-    }
-    body{
-        background-color: rgb(0, 47, 255);
-        height: 100vh;
-    }
-     /* inicio cabeçario */
-    .interface{
-        max-width: 1280px;
-        margin: 0 auto;
-        top: 100px;
-    }
-    
-   
-    
-    header{
-        padding: 25px 5%;
-    
-    }
-    header >.interface{
-        display: flex;
-        align-items: center;
-        justify-content: space-between ;
-        flex-direction: column;
-        gap: 20px;
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    
-    }
-    
-    header a{
-    
-        color: aliceblue;
-        text-decoration: none;
-    }
-    
-    header nav ul{
-        list-style-type: none;
-    }
-    
-    header nav ul li{
-        display: contents ;
-        padding: 0 20px;
-   
-        
-    
-    
-    }
-    header a img{
-        height: 120px;
-        width: 120px;
-        border-radius: 50%;
-        border: 3px solid #000000;
-        
-        
-    }
-    header nav ul a{
-        border: 3px solid #000000; /* Cor e espessura da borda */
-        border-radius: 17px; /* Bordas arredondadas */
-        padding: 7px 12px; /* Espaçamento interno */
-        background-color: #ffffff; /* Cor de fundo */
-        color: #000000; /* Cor do texto */
-        cursor: pointer; /* Cursor ao passar por cima */
-    
-    }
+/* FUNDO ANIMADO GRADIENTE */
+body {
+    min-height: 100vh;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(120deg, #0f2027, #2c5364, #0026ff, #0072ff);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease-in-out infinite;
+    color: #f8fafc;
+    overflow-x: hidden;
+}
 
-    /* fim cabeçario */
-    
-    
-        
-    h3{
-    position: relative;
-    top: 3%;
-    text-align: center;
-    color: #ffffff;
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
-    }
- h1{
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* CABEÇALHO FLUTUANTE */
+header {
+    width: 100vw;
+    background: rgba(0,0,0,0.45);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 24px 0 10px 0;
+    backdrop-filter: blur(8px);
+}
+
+header .interface {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    position: relative;
-    top: -1050px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+}
+
+header nav ul a {
+    background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 22px;
+    padding: 10px 28px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 12px 0 rgba(44, 62, 80, 0.10);
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    border: none;
+    outline: none;
+}
+
+header nav ul a:hover {
+    background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
+    color: #d6d013;
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.18);
+}
+
+/* LOGO ANIMADA */
+header a img, .bal {
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    border: 4px solid #00c3ff;
+    box-shadow: 0 0 0 0 #e4dd11, 0 0 0 0 #8bbbc9;
+    
+    background: #fff;
+    object-fit: cover;
+}
+
+
+   
+    
+
+
+/* TÍTULOS COM EFEITO */
+h1, h3 {
     text-align: center;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    margin: 30px 0 10px 0;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px #00000044;
+}
+
+h1 {
+    color: #fff700;
+    font-size: 2.5rem;
+    font-weight: 900;
+    animation: neon 2s alternate infinite;
+}
+
+@keyframes neon {
+    from { text-shadow: 0 0 8px #fff700, 0 0 16px #00c6ff; }
+    to   { text-shadow: 0 0 24px #fff700, 0 0 48px #00c6ff; }
+}
+
+h3 {
     color: #ffffff;
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
- }
-    
-        
-    
+    font-size: 1.4rem;
+    font-weight: 500;
+}
 
-    /*imagem meio*/
-    img.mol{
-   display: flex;
-   flex-wrap: wrap;
-   top: 20px;
-   margin: auto;
-   width: 300px;
-   height: 390px;
-   border: 3px solid #000000;
-   border-radius: 30px; 
-   transition: transform 0.1s;}
+/* IMAGEM CENTRAL COM EFEITO */
+img.mol {
+    display: block;
+    margin: 40px auto 20px auto;
+    width: 300px;
+    height: 600px;
+    border: 2px solid #fff700;
+    border-radius: 50px;
+    box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.25);
+    object-fit: cover;
+    transition: transform 0.3s, box-shadow 0.3s;
+    filter: grayscale(10%) brightness(1.1);
+}
 
- .mol:hover{ transform: scale(1.10); }
-
- /* fim imagem meio */
-
-/* Redes sociais */
+/* REDES SOCIAIS CÍRCULOS FLUTUANTES */
 .topo {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px; /* Adiciona espaço acima das redes sociais */
+    margin-top: 18px;
+    gap: 22px;
 }
 
+.socialContainer {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e9e101 0%, #00c6ff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 12px 0 rgba(118, 138, 119, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: float 3s ease-in-out infinite;
+}
 
+@keyframes float {
+    0%, 100% { transform: translateY(0);}
+    50% { transform: translateY(-10px);}
+}
 
-/* Estilos da intro */
+socialContainer:hover {
+    transform: scale(1.18) rotate(4deg);
+    box-shadow: 0 8px 32px 0 rgba(0,198,255,0.18);
+}
+
+.socialSvg, .locationSvg {
+    width: 28px;
+    height: 28px;
+    fill: #ffffff;
+}
+
+.largeIcon {
+    width: 34px;
+}
+
+/* CARD DESTAQUE GLASSMORPHISM */
+.card {
+    width: 100%;
+    max-width: 420px;
+    margin: 50px auto;
+    background: rgba(255,255,255,0.10);
+    border-radius: 22px;
+    box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    gap: 22px;
+    position: relative;
+    top: 20px;
+    backdrop-filter: blur(8px);
+    border: 1.5px solid rgba(255,255,255,0.25);
+}
+
+/* Splash screen estilo Netflix */
 .logo-container {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
     width: 100vw;
     height: 100vh;
-    background-color: black;
+    background: #000;
     display: flex;
-    justify-content: center;
     align-items: center;
-    z-index: 100;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.7s;
+}
+
+.logo-container.hide {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .logo {
-    width: 100px;  /* Aumenta a largura */
-    height: 100px; /* Aumenta a altura */
-    opacity: 0;
-    transform: scale(0.5);
-    animation: fadeInZoom 2s ease-out forwards;
-    border-radius: 20px; /* Deixa as bordas arredondadas */
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    animation: logoPop 1.2s cubic-bezier(.68,-0.55,.27,1.55);
 }
 
-/* Estilos do conteúdo normal do site */
-.conteudo {
-    display: none; /* Esconde o conteúdo até a intro acabar */
-    text-align: center;
-    padding: 50px;
+@keyframes logoPop {
+    0% { transform: scale(0.7); opacity: 0; }
+    60% { transform: scale(1.15); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
-/* Animação da logo */
-@keyframes fadeInZoom {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Rodapé */
+/* RODAPÉ MODERNO */
 footer {
-    background: #333;
-    color: #fff;
+    background: rgba(0,0,0,0.65);
+    color: #fff700;
     text-align: center;
-    padding: 20px 0;
-    width: 100%;
-    margin-top: 20px; /* Adiciona espaço acima do rodapé */
-}
-
-footer p {
-    margin: 0;
-    font-size: 14px;
+    padding: 28px 0 14px 0;
+    font-size: 16px;
+    margin-top: 40px;
+    letter-spacing: 1px;
+    box-shadow: 0 -2px 16px 0 rgba(44, 62, 80, 0.10);
 }
 
 footer a {
-    color: #fff;
+    color: #00c6ff;
     text-decoration: none;
     margin: 0 10px;
+    transition: text-decoration 0.2s, color 0.2s;
 }
 
-fit-content
 footer a:hover {
     text-decoration: underline;
-}
-/* From Uiverse.io by roajuan93 */ 
-.card {
-    width: 100%;
-    max-width: 400px;
-    margin: 50px auto; /* Aumenta a margem superior */
-    background-color: transparent; /* Remove o fundo preto */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 25px;
-    gap: 15px;
-    position: relative; /* Adiciona posicionamento relativo */
-    top: 20px; /* Move o card para baixo */
+    color: #fff700;
 }
 
-/* Ajustes para os containers individuais */
-.socialContainer {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-color: rgb(44, 44, 44);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    transition: all 0.2s ease; /* Reduz o tempo de transição */
-}
-
-/* instagram*/
-.containerOne:hover {
-    background-color: #d62976;
-    transition-duration: 0.3s;
-}
-/* Tiktok*/
-.containerTwo:hover {
-    background-color: #25f4ee;
-    transition-duration: 0.3s;
-}
-/* Facebook*/
-.containerThree:hover {
-    background-color: #1877f2;
-    transition-duration: 0.3s;
-}
-/* Whatsapp*/
-.containerFour:hover {
-    background-color: green;
-    transition-duration: 0.3s;
-}
-
-/* Remove a animação que causa o efeito embaraçado */
-.socialContainer:active {
-    transform: scale(0.95); /* Reduz um pouco o efeito de escala */
-    transition-duration: 0.1s; /* Torna a transição mais rápida */
-}
-
-.socialSvg {
-    width: 19px;
-}
-.largeIcon {
-    width: 27px; /* Ancho específico solo para el icono de TikTok */
-}
-.socialSvg path {
-    fill: rgb(255, 255, 255);
-}
-
-/* Simplifica a animação do ícone */
-.socialContainer:hover .socialSvg {
-    transform: scale(1.1); /* Apenas um leve aumento de escala */
-    transition: transform 0.2s ease;
-}
-
-/* Remove ou simplifica a animação slide-in-top */
-@keyframes slide-in-top {
-    0% {
-        transform: translateY(-10px);
-        opacity: 0.8;
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    img.mol {
+        width: 90vw;
+        max-width: 300px;
+        height: 400px;
     }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Responsividade para telas menores */
-@media (max-width: 480px) {
     .card {
-        padding: 15px;
+        padding: 18px;
         gap: 10px;
     }
-
     .socialContainer {
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 600px) {
+    header .interface {
+        padding: 0 10px;
+    }
+    h1 {
+        font-size: 1.3rem;
+    }
+    img.mol {
+        width: 96vw;
+        max-width: 98vw;
+        height: 420px;
+    }
+    .card {
+        padding: 10px;
+        gap: 8px;
+    }
+    .socialContainer {
+        width: 36px;
+        height: 36px;
+    }
+    footer {
+        font-size: 13px;
+        padding: 16px 0 8px 0;
     }
 }

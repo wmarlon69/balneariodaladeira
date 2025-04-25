@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria de Fotos</title>
-    <link rel="stylesheet" href="wd.css">
+    <link rel="stylesheet" href="style2.css">
     <link rel="website icon" type="png" href="imagens/logo balneario (3).pdfs.png">
-    
+    <script src="jsscrip2.js"></script>
 
 </head>
 <body>
@@ -31,66 +31,26 @@
 
 <!-- fim link -->
 
-    <div class="gallery">
+    <div class="gallery" id="gallery">
         
       <!-- PISCINA -->
-        <img src="imagens/Snapinsta.app_375182295_1727526154393915_8076923517977254796_n_1080.jpg" alt="Descrição da Imagem 1">
-        <img src="imagens/Snapinsta.app_375164989_3525179557710537_1736479298298656535_n_1080.jpg" alt="Descrição da Imagem 2">
-        <img src="imagens/Snapinsta.app_375123968_209852675425915_7786694432303753033_n_1080.jpg" alt="Descrição da Imagem 3">
-        <img src="imagens/Snapinsta.app_306049963_124820000312179_7767286079231883501_n_1080.jpg" alt="Descrição da Imagem 4">
-        <img src="imagens/Imagem do WhatsApp de 2024-11-02 à(s) 15.58.57_896f87ed.jpg"  alt="Descrição da Imagem 5">
-        <img src="imagens/375067489_1622375608172267_5939117422760398567_n.jpg"        alt="Descrição da Imagem 6">
-        <img src="imagens/balneario.jpg"                                               alt="Descrição da Imagem 7">
-        <img src="imagens/Imagem do WhatsApp de 2024-10-27 à(s) 20.46.26_888c608a.jpg" alt="8">
-        <img src="imagens/Imagem do WhatsApp de 2024-11-01 à(s) 16.17.07_a1b10769.jpg" alt="9"> 
-        <img src="imagens/Imagem do WhatsApp de 2024-11-02 à(s) 10.32.14_e9a57b0d.jpg" alt="10">
-        <img src="imagens/Imagem do WhatsApp de 2024-11-02 à(s) 10.32.12_9d7bf160.jpg" alt="11">
-        <img src="imagens/Imagem do WhatsApp de 2024-11-02 à(s) 10.31.35_5ac1f942.jpg" alt="12">
-        <img src="imagens/Imagem do WhatsApp de 2024-11-02 à(s) 16.06.41_8484a4cc.jpg" alt="13">
-        <img src="imagens/Imagem do WhatsApp de 2024-11-02 à(s) 16.06.41_702bd735.jpg" alt="14">
-        <img src="imagens/Imagem do WhatsApp de 2024-11-02 à(s) 16.06.40_cc9bcd41.jpg" alt="15">
-        <img src="imagens/Imagem do WhatsApp de 2024-11-02 à(s) 15.58.56_244c7ce2.jpg" alt="16">
-        <img src="NOVAS IM/Imagem do WhatsApp de 2024-11-15 à(s) 15.07.53_cfc17e3c.jpg" alt="17">
-        <img src="NOVAS IM/Imagem do WhatsApp de 2024-11-15 à(s) 15.08.34_7e0b9acc.jpg" alt="18">
-        <img src="NOVAS IM/Imagem do WhatsApp de 2024-11-15 à(s) 15.08.35_73e03c6c.jpg" alt="19">
-        <img src="NOVAS IM/Imagem do WhatsApp de 2024-11-15 à(s) 15.10.03_f5447cd9.jpg" alt="20">
         
-        <!-- videos
-        <div class="video-container"> 
-          
-          
-          
-          
-          
-          <video controls class="meu-video">
-            <source src="video/1120 (1).mp4" type="video/mp4">
-            Seu navegador não suporta a tag de vídeo.
-          </video>
-          
-          
-          <video controls class="meu-video">
-            <source src="video/1106(3).mp4" type="video/mp4">
-            Seu navegador não suporta a tag de vídeo.
-          </video>
-          
-          
-          <video controls class="meu-video">
-            <source src="video/1106(4).mp4" type="video/mp4">
-            Seu navegador não suporta a tag de vídeo.
-          </video>
-          
-          
-          
-          <video controls class="meu-video">
-            <source src="video/1120 (1)(1).mp4" type="video/mp4">
-            Seu navegador não suporta a tag de vídeo.
-          </video>
-        </div>
+        <img src="imagens/Snapinsta.app_306049963_124820000312179_7767286079231883501_n_1080.jpg" alt="Descrição da Imagem 4" onclick="openFullscreen(this)"> 
+        <img src="imagens/Imagem do WhatsApp de 2024-11-02 à(s) 15.58.57_896f87ed.jpg"  alt="Descrição da Imagem 5" onclick="openFullscreen(this)">     
+        <img src="imagens/Imagem do WhatsApp de 2024-10-27 à(s) 20.46.26_888c608a.jpg" alt="8" onclick="openFullscreen(this)">
+        <img src="imagens/Imagem do WhatsApp de 2024-11-01 à(s) 16.17.07_a1b10769.jpg" alt="9" onclick="openFullscreen(this)"> 
+        <img src="imagens/Imagem do WhatsApp de 2024-11-02 à(s) 10.32.14_e9a57b0d.jpg" alt="10" onclick="openFullscreen(this)">
+        <img src="imagens/Imagem do WhatsApp de 2024-11-02 à(s) 10.32.12_9d7bf160.jpg" alt="11" onclick="openFullscreen(this)">
+        <img src="imagens/4.jpg" alt="13" onclick="openFullscreen(this)">
+        <img src="imagens/Imagem do WhatsApp de 2024-11-02 à(s) 16.06.41_702bd735.jpg" alt="14" onclick="openFullscreen(this)">
+        <img src="imagens/Imagem do WhatsApp de 2024-11-02 à(s) 16.06.40_cc9bcd41.jpg" alt="15" onclick="openFullscreen(this)">
+        <img src="imagens/Imagem do WhatsApp de 2024-11-02 à(s) 15.58.56_244c7ce2.jpg" alt="16" onclick="openFullscreen(this)">
+        <img src="imagens/1.jpg" alt="17" onclick="openFullscreen(this)">
+        <img src="imagens/2.jpg" alt="18" onclick="openFullscreen(this)">
+        <img src="imagens/3.jpg" alt="19" onclick="openFullscreen(this)">
+        <img src="imagens/5.jpg" alt="20" onclick="openFullscreen(this)">
         
-        <!-- <video controls class="meu-video"> 
-          <source src="video/1106(5).mp4" type="video/mp4">
-          Seu navegador não suporta a tag de vídeo.
-        </video>-->
+       
       </div>
     </body>
     </html>

@@ -9,7 +9,7 @@
 body {
     min-height: 100vh;
     font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(120deg, #0f2027, #2c5364, #0026ff, #0072ff);
+    background: linear-gradient(120deg, #00ffff, #01f0f0, #0026ff, #07098d);
     background-size: 400% 400%;
     animation: gradientBG 12s ease-in-out infinite;
     color: #f8fafc;
@@ -56,7 +56,7 @@ header nav ul a {
     border-radius: 22px;
     padding: 10px 28px;
     text-decoration: none;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     box-shadow: 0 2px 12px 0 rgba(44, 62, 80, 0.10);
     transition: background 0.3s, color 0.3s, transform 0.2s;
     border: none;
@@ -75,7 +75,7 @@ header a img, .bal {
     height: 110px;
     width: 110px;
     border-radius: 50%;
-    border: 4px solid #00c3ff;
+    border: 1px solid #fbff00;
     box-shadow: 0 0 0 0 #e4dd11, 0 0 0 0 #8bbbc9;
     
     background: #fff;
@@ -141,13 +141,13 @@ img.mol {
     width: 54px;
     height: 54px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #e9e101 0%, #00c6ff 100%);
+    background: linear-gradient(135deg, #000000 0%, #0ccaff 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 12px 0 rgba(118, 138, 119, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
-    animation: float 3s ease-in-out infinite;
+    /* animation: float 6s ease-in-out infinite; */
 }
 
 @keyframes float {

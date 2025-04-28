@@ -26,15 +26,22 @@ h2 {
     text-align: center;
 }
 
+
+
+
+
 /* Galeria */
 .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start; /* ou center para alinhar verticalmente também */
     gap: 22px;
     margin-bottom: 32px;
-    width:100%;
+    width: 100%;
     max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .gallery img {
@@ -179,4 +186,23 @@ h2 {
         font-size: 1rem;
         padding: 10px 0;
     }
+}
+
+/* Botão de vídeos */
+.btn-videos {
+    display: inline-block;
+    margin-left: 16px;
+    padding: 10px 26px;
+    background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 18px;
+    text-decoration: none;
+    font-size: 1rem;
+    box-shadow: 0 2px 12px 0 rgba(44,62,80,0.10);
+    transition: background 0.2s, transform 0.2s;
+}
+.btn-videos:hover {
+    background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
+    transform: scale(1.05);
 }

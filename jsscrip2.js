@@ -86,3 +86,6 @@ function navigateFullscreen(direction) {
     fullscreenImg.src = gallery[currentIndex].src;
     fullscreenImg.alt = gallery[currentIndex].alt;
 }
+
+
+// video

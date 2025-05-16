@@ -1,24 +1,113 @@
 // script.js
 document.addEventListener("DOMContentLoaded", function () {
     const backToTopButton = document.querySelector(".back-to-top");
+    
+    // Inicialmente oculto com opacidade 0
+    backToTopButton.style.opacity = "0";
+    backToTopButton.style.display = "block";
+    backToTopButton.style.transform = "translateY(20px)";
+
+    // Função de debounce para melhorar performance
+    function debounce(func, wait = 10, immediate = true) {
+        let timeout;
+        return function() {
+            const context = this, args = arguments;
+            const later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            const callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    }
 
     // Mostra ou esconde o botão "Voltar ao topo" com base no scroll
-    window.addEventListener("scroll", function () {
+    window.addEventListener("scroll", debounce(function () {
         if (window.scrollY > 300) {
-            backToTopButton.style.display = "block";
+            backToTopButton.style.opacity = "0.8";
+            backToTopButton.style.transform = "translateY(0)";
         } else {
-            backToTopButton.style.display = "none";
+            backToTopButton.style.opacity = "0";
+            backToTopButton.style.transform = "translateY(20px)";
         }
-    });
+    }, 15));
 
     // Rola suavemente para o topo ao clicar no botão
     backToTopButton.addEventListener("click", function (e) {
         e.preventDefault();
+        // Efeito visual quando clicado
+        this.style.transform = "scale(0.95)";
+        setTimeout(() => {
+            this.style.transform = "scale(1)";
+        }, 150);
+        
         window.scrollTo({
             top: 0,
             behavior: "smooth",
         });
     });
+    
+    // Adiciona efeito de animação aos itens da lista ao rolar a página
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Aplicar às seções
+    document.querySelectorAll('.menu-section').forEach(section => {
+        section.style.opacity = "0";
+        section.style.transform = "translateY(20px)";
+        section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        observer.observe(section);
+    });
+    
+    // Aplicar aos itens individuais em cada seção (com atraso)
+    document.querySelectorAll('.menu-items li').forEach((item, index) => {
+        item.style.opacity = "0";
+        item.style.transform = "translateY(20px)";
+        item.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+        item.style.transitionDelay = `${index % 10 * 0.05}s`;
+    });
+    
+    // Classe para animar os elementos
+    document.addEventListener('scroll', debounce(() => {
+        document.querySelectorAll('.menu-items li').forEach((item) => {
+            const position = item.getBoundingClientRect();
+            // Verificar se o item está visível na janela de visualização
+            if (position.top < window.innerHeight * 0.9 && position.bottom >= 0) {
+                item.style.opacity = "1";
+                item.style.transform = "translateY(0)";
+            }
+        });
+    }, 10));
+
+    // Adiciona classe 'appear' quando os elementos estão visíveis
+    const addAppearClass = debounce(() => {
+        document.querySelectorAll('.menu-section').forEach(section => {
+            const position = section.getBoundingClientRect();
+            if (position.top < window.innerHeight * 0.8 && position.bottom >= 0) {
+                section.style.opacity = "1";
+                section.style.transform = "translateY(0)";
+            }
+        });
+    }, 10);
+    
+    // Chamando uma vez para elementos inicialmente visíveis
+    addAppearClass();
+    // Adicionando ao evento de scroll
+    window.addEventListener('scroll', addAppearClass);
 });
 
 let currentIndex = 0;
@@ -65,6 +154,9 @@ function openFullscreen(img) {
         closeFullscreen();
     };
     fullscreenDiv.appendChild(closeButton);
+    
+    // Previne que a imagem bloqueie os cliques nos botões
+    fullscreenImg.style.pointerEvents = "none";
 
     // Adiciona o contêiner ao corpo do documento
     document.body.appendChild(fullscreenDiv);

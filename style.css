@@ -9,7 +9,7 @@
 body {
     min-height: 100vh;
     font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(120deg, #00ffff, #01f0f0, #0026ff, #07098d);
+    background: linear-gradient(120deg, #0099ff, #0190f0, #0026ff, #07098d);
     background-size: 400% 400%;
     animation: gradientBG 12s ease-in-out infinite;
     color: #f8fafc;
@@ -88,7 +88,7 @@ header a img, .bal {
 
 
 /* TÍTULOS COM EFEITO */
-h1, h3 {
+h1, h2, h3 {
     text-align: center;
     font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
     margin: 30px 0 10px 0;
@@ -101,6 +101,14 @@ h1 {
     font-size: 2.5rem;
     font-weight: 900;
     animation: neon 2s alternate infinite;
+}
+
+h2 {
+    color: #fff700;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 @keyframes neon {
@@ -126,6 +134,115 @@ img.mol {
     object-fit: cover;
     transition: transform 0.3s, box-shadow 0.3s;
     filter: grayscale(10%) brightness(1.1);
+}
+
+/* SEÇÃO DE DESCRIÇÃO */
+.descricao {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* SEÇÃO DE DEPOIMENTOS */
+.depoimentos {
+    max-width: 1200px;
+    margin: 60px auto 40px;
+    padding: 0 20px;
+}
+
+.depoimentos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.depoimento-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 25px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.depoimento-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.estrelas {
+    color: #fff700;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.depoimento-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.cliente-nome {
+    display: block;
+    font-style: italic;
+    text-align: right;
+    color: #00c6ff;
+}
+
+/* SEÇÃO DE LOCALIZAÇÃO */
+.localizacao {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.mapa-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* SEÇÃO DE FAQ */
+.faq {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.faq-item:hover {
+    transform: translateX(10px);
+}
+
+.faq-pergunta {
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff700;
+    margin-bottom: 10px;
+}
+
+.faq-resposta {
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 /* REDES SOCIAIS CÍRCULOS FLUTUANTES */
@@ -191,6 +308,7 @@ socialContainer:hover {
 
 /* Splash screen estilo Netflix */
 .logo-container {
+
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     width: 100vw;
@@ -233,6 +351,16 @@ footer {
     box-shadow: 0 -2px 16px 0 rgba(44, 62, 80, 0.10);
 }
 
+footer .footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer .footer-info {
+    margin-bottom: 15px;
+}
+
 footer a {
     color: #00c6ff;
     text-decoration: none;
@@ -248,42 +376,60 @@ footer a:hover {
 /* RESPONSIVIDADE */
 @media (max-width: 900px) {
     img.mol {
-        width: 90vw;
-        max-width: 300px;
+        width: 80%;
         height: 400px;
     }
-    .card {
-        padding: 18px;
-        gap: 10px;
+    
+    .depoimentos-container {
+        flex-direction: column;
+        align-items: center;
     }
-    .socialContainer {
-        width: 44px;
-        height: 44px;
+    
+    .card {
+        flex-wrap: wrap;
     }
 }
 
 @media (max-width: 600px) {
     header .interface {
-        padding: 0 10px;
+        flex-direction: column;
     }
+    
     h1 {
-        font-size: 1.3rem;
+        font-size: 2rem;
     }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
     img.mol {
-        width: 96vw;
-        max-width: 98vw;
-        height: 420px;
+        height: 300px;
     }
+    
     .card {
-        padding: 10px;
-        gap: 8px;
+        padding: 20px;
+        gap: 12px;
     }
+    
     .socialContainer {
-        width: 36px;
-        height: 36px;
+        width: 46px;
+        height: 46px;
     }
+    
+    .faq-item {
+        padding: 15px;
+    }
+    
+    .faq-pergunta {
+        font-size: 16px;
+    }
+    
     footer {
-        font-size: 13px;
-        padding: 16px 0 8px 0;
+        font-size: 14px;
     }
 }

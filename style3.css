@@ -1,393 +1,379 @@
+/* Adicionar fonte do Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 /* Estilo geral */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9; /* Fundo claro */
-    color: #333; /* Texto escuro */
+    background-color: #f5f7fa; /* Fundo mais suave */
+    color: #6e6868; /* Texto mais suave */
+    line-height: 1.6;
+    transition: all 0.3s ease;
 }
 
 /* Cabeçalho */
 header {
-    background-color: #007BFF; /* Azul vibrante */
+    background: linear-gradient(135deg, #4dabf7 0%, #2b8ae2 100%); /* Gradiente suave */
     color: white;
-    padding: 20px 0;
+    padding: 25px 0;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(77, 64, 64, 0.08);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.logo-container {
+    margin-bottom: 15px;
 }
 
 header h1 {
-    font-size: 36px;
+    font-size: 38px;
     margin: 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.tagline {
+    font-size: 16px;
+    margin-top: 5px;
+    opacity: 0.9;
+    font-weight: 300;
 }
 
 header nav ul {
     list-style: none;
     padding: 0;
-    margin: 20px 0 0;
+    margin: 25px 0 0;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 header nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 18px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    transition: all 0.4s ease;
+    background-color: rgba(78, 73, 73, 0.15);
+    backdrop-filter: blur(5px);
+}
+
+header nav ul li a i {
+    margin-right: 5px;
+    font-size: 14px;
 }
 
 header nav ul li a:hover {
-    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+    background-color: rgba(73, 66, 66, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Container principal */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 /* Seções */
-section {
-    padding: 40px 20px;
-    margin: 20px auto;
-    max-width: 1200px;
+.menu-section {
+    padding: 40px 25px;
+    margin: 30px auto;
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
 }
 
-section h2 {
-    font-size: 28px;
-    color: #007BFF;
+.menu-section h2 {
+    font-size: 30px;
+    color: #3383d6;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-transform: uppercase;
+    position: relative;
+    padding-bottom: 12px;
+    font-weight: 600;
 }
 
-section ul {
+.menu-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #4dabf7 0%, #2b8ae2 100%);
+    border-radius: 3px;
+}
+
+.menu-items {
     list-style: none;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
 }
 
-section ul li {
+.menu-items li {
     text-align: center;
-    background-color: #f1f1f1;
-    padding: 15px;
-    border-radius: 10px;
-    width: 200px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-section ul li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-section ul li img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-section ul li:hover img {
-    opacity: 0.9;
-}
-
-section ul li span {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Botão "Voltar ao Topo" */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50%;
-    text-align: center;
-    text-decoration: none;
-    font-size: 24px;
-    display: none;
-    transition: background-color 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.back-to-top:hover {
-    background-color: #0056b3;
-}
-
-/* Rodapé */
-footer {
-    background-color: #007BFF;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
-    font-size: 14px;
-}/* Estilo geral */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9; /* Fundo claro */
-    color: #333; /* Texto escuro */
-}
-
-/* Cabeçalho */
-header {
-    background-color: #007BFF; /* Azul vibrante */
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    font-size: 36px;
-    margin: 0;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 0;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-header nav ul li a:hover {
-    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
-}
-
-/* Seções */
-section {
-    padding: 40px 20px;
-    margin: 20px auto;
-    max-width: 1200px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-section h2 {
-    font-size: 28px;
-    color: #007BFF;
-    text-align: center;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-section ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-section ul li {
-    text-align: center;
-    background-color: #f1f1f1;
-    padding: 15px;
-    border-radius: 10px;
-    width: 200px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-section ul li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-section ul li img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-section ul li:hover img {
-    opacity: 0.9;
-}
-
-section ul li span {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Botão "Voltar ao Topo" */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50%;
-    text-align: center;
-    text-decoration: none;
-    font-size: 24px;
-    display: none;
-    transition: background-color 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.back-to-top:hover {
-    background-color: #0056b3;
-}
-
-/* Rodapé */
-footer {
-    background-color: #007BFF;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
-    font-size: 14px;
-}/* Estilos gerais */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #dfd8d8;
-    color: #000000;
-}
-header {
-    background-color: #2a00fc;
-    color: rgb(243, 239, 239);
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-nav ul li {
-    margin: 0 13px;
-}
-
-nav ul li a {
-    font-family: 'Arial', sans-serif; /* Escolha uma fonte elegante */
-    font-size: 18px; /* Tamanho da fonte */
-    color: white; /* Cor do texto */
-    text-decoration: none; /* Remove o sublinhado */
-    padding: 10px 15px; /* Espaçamento interno */
-    border-radius: 5px; /* Bordas arredondadas */
-    transition: background-color 0.3s, color 0.3s; /* Transição suave */
-}
-
-nav ul li a:hover {
-    background-color: #dfdb00; /* Cor de fundo ao passar o mouse */
-    color: #fff; /* Cor do texto ao passar o mouse */
-}
-
-section {
+    background-color: #ffffff;
     padding: 20px;
-    border-bottom: 1px solid #ddd;
-    text-align: center; /* Centraliza todo o conteúdo da seção */
+    border-radius: 18px;
+    width: 220px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    border: 1px solid #f0f0f0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 320px; /* Altura fixa para todos os cards */
 }
 
-section h2 {
+.menu-items li:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.12);
+    border-color: #e6f0ff;
+}
+
+.menu-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px; /* Altura um pouco menor para não cortar as imagens */
+    background-color: #ffffffe7;
+    width: 100%;
+    border: 0px solid #f0f0f0;
+    box-shadow: none; /* Removendo a sombra interna */
+}
+
+.menu-image img {
+    max-width: 95%; /* Aumentando para 95% para usar mais do espaço disponível */
+    max-height: 160px; /* Altura um pouco menor para garantir que não haja cortes */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: all 0.5s ease;
+    padding: 4px; /* Reduzindo o padding */
+    filter: none; /* Removendo a sombra para evitar cortes */
+}
+
+/* Adicionando animação suave para as imagens */
+@keyframes fadeInImage {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.menu-image img {
+    animation: fadeInImage 0.5s ease forwards;
+}
+
+.menu-items li:hover .menu-image img {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
+
+.menu-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: auto;
+    padding: 5px 0;
+}
+
+.menu-name {
+    font-size: 16px;
+    font-weight: 600;
     color: #000000;
-    text-align: center; /* Centraliza os títulos */
-}
-
-section ul {
-    list-style-type: none;
-    padding: 0;
+    margin-bottom: 5px;
+    min-height: 40px; /* Altura mínima para o nome dos produtos */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centraliza os itens da lista */
-    gap: 20px; /* Espaço entre os itens */
+    align-items: center;
+    justify-content: center;
 }
 
-section ul li {
-    margin: 10px 0;
-    display: flex;
-    flex-direction: column; /* Empilha a imagem e o texto verticalmente */
-    align-items: center; /* Centraliza os itens verticalmente */
-    text-align: center; /* Centraliza o texto */
-    width: 200px; /* Largura fixa para cada item */
+.menu-price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2b8ae2;
+    background: linear-gradient(135deg, #4dabf7 0%, #2b8ae2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px 0;
 }
 
-section ul li img {
-    border-radius: 15px;
-    width: 150px; /* Largura fixa para as imagens */
-    height: 150px; /* Altura fixa para as imagens */
-    object-fit: cover;
-    margin-bottom: 10px; /* Espaço entre a imagem e o texto */
-}
-
-footer {
-    background-color: #0026ff;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    padding: 10px 0;
-}
-
-/* Estilos para dispositivos móveis */
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    section ul li {
-        width: 100%; /* Ocupa toda a largura em telas pequenas */
-    }
-
-    section ul li img {
-        width: 200px; /* Imagens um pouco maiores em telas pequenas */
-        height: 200px;
-    }
-}
-
-/* Estilos para o ícone de voltar ao topo */
+/* Botão "Voltar ao Topo" */
 .back-to-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007BFF;
+    bottom: 25px;
+    right: 25px;
+    background: linear-gradient(135deg, #4dabf7 0%, #2b8ae2 100%);
     color: white;
-    padding: 10px;
+    padding: 15px;
     border-radius: 50%;
     text-align: center;
     text-decoration: none;
-    font-size: 24px;
-    display: none; /* Escondido por padrão */
-    transition: background-color 0.3s;
+    font-size: 20px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .back-to-top:hover {
-    background-color: #0056b3;
+    background: linear-gradient(135deg, #2b8ae2 0%, #1a6dbd 100%);
+    opacity: 1;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Rodapé */
+footer {
+    background: linear-gradient(135deg, #4dabf7 0%, #2b8ae2 100%);
+    color: white;
+    text-align: center;
+    padding: 18px 0;
+    margin-top: 30px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-link {
+    color: white;
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: rgba(80, 75, 75, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header nav ul {
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    header nav ul li a {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+    
+    .menu-items li {
+        width: calc(50% - 35px);
+        min-width: 180px;
+        padding: 15px;
+        height: 300px;
+    }
+
+    .menu-image {
+        height: 160px;
+    }
+
+    .menu-image img {
+        max-height: 140px;
+    }
+    
+    .menu-name {
+        font-size: 15px;
+        min-height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 30px;
+    }
+    
+    .menu-section h2 {
+        font-size: 24px;
+    }
+    
+    .menu-items li {
+        width: 100%;
+        max-width: 300px;
+        height: 310px;
+    }
+    
+    .menu-image {
+        height: 160px;
+    }
+    
+    .menu-image img {
+        max-height: 140px;
+    }
+
+    .menu-name {
+        font-size: 15px;
+    }
+
+    .menu-price {
+        font-size: 14px;
+    }
+
+    header nav ul {
+        gap: 10px;
+        margin-top: 15px;
+    }
+    
+    header nav ul li a {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-section.appear {
+    animation: fadeIn 0.5s ease forwards;
 }
 

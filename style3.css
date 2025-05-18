@@ -139,9 +139,9 @@ header nav ul li a:hover {
 }
 
 .menu-items li:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.12);
-    border-color: #e6f0ff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 20px rgb(2, 98, 241);
+    border-color: #000000;
 }
 
 .menu-image {
@@ -246,7 +246,7 @@ header nav ul li a:hover {
 
 /* Rodapé */
 footer {
-    background: linear-gradient(135deg, #4dabf7 0%, #2b8ae2 100%);
+    background: linear-gradient(135deg, #224c6e 0%, #14324e 100%);
     color: white;
     text-align: center;
     padding: 18px 0;
